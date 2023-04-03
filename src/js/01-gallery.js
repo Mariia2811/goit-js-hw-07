@@ -15,6 +15,9 @@ refListEl.insertAdjacentHTML('beforeend', imgMarkUp);
 refListEl.addEventListener('click', (event) => {
   event.preventDefault();
   const refImgEl = event.target.classList.contains('gallery__image');
+  if (!refImgEl) {
+    return
+  }
   const imgElSrc = event.target.dataset.sourse;
   const instense = basicLightbox.create (`
   <img width="1400" height="900" src="${imgElSrc}">
