@@ -12,23 +12,12 @@ const imgMarkUp = galleryItems.map(({preview, original, description}) =>
 
 refListEl.insertAdjacentHTML('beforeend', imgMarkUp);
 
-refListEl.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    const refImgEl = event.target.classList.contains('gallery__image');
-    if (!refImgEl) {
-      return
-    }
-
-    const gallery = new SimpleLightbox('.gallery a', {
-        captions: true,
-        captionSelector: 'img',
-        captionsType: 'attr',
-        captionsData: 'alt',
-        captionPosition: 'bottom',
-        captionDelay: 250,
-        
-});
-})
+new SimpleLightbox('.gallery a', {
+            captions: true,
+            captionSelector: 'img',
+            captionsType: 'attr',
+            captionsData: 'alt',
+            captionPosition: 'bottom',
+            captionDelay: 250,})
 
 console.log(galleryItems);
